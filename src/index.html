@@ -8,10 +8,24 @@
 
     <!-- inject:js -->
     <script src="node_modules/angular/angular.js"></script>
-    <script src="webapp/app.js"></script>
+    <script src="webapp/app.module.js"></script>
+    <script src="webapp/start/start.module.js"></script>
+    <script src="webapp/services/crud/crud.module.js"></script>
+    <script src="webapp/services/department/dept.module.js"></script>
+    <script src="webapp/services/room/room.module.js"></script>
+    <script src="webapp/services/professor/professor.module.js"></script>
+    <script src="webapp/services/http.factory.js"></script>
+    <script src="webapp/start/start.controller.js"></script>
+    <script src="webapp/start/start.directive.js"></script>
+    <script src="webapp/services/crud/add.service.js"></script>
+    <script src="webapp/services/crud/delete.service.js"></script>
+    <script src="webapp/services/crud/update.service.js"></script>
+    <script src="webapp/services/department/dept.services.js"></script>
+    <script src="webapp/services/room/room.service.js"></script>
+    <script src="webapp/services/professor/professor.service.js"></script>
     <!-- endinject -->
 </head>
-<body>
-
+<body ng-app="ist-directory">
+    <start-screen></start-screen>
 </body>
 </html>

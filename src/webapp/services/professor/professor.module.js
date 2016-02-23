@@ -1,0 +1,1 @@
+angular.module('ist-professor', ['ist-http']);

@@ -8,6 +8,7 @@ var jasmine = require('gulp-jasmine');
 gulp.task('inject', function(){
     var sources = gulp.src([
         'node_modules/angular/angular.js',
+        'webapp/**/*.module.js',
         'webapp/**/*.js'
     ]);
 
