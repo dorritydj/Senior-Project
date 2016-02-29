@@ -11,8 +11,5 @@ angular.module('ist-directory', [
     'ist-professor',
     'ist-room',
     'ist-dept',
-    'ist-crud',
     'ist-start'
 ]);
-
-angular.module('ist-crud', ['ist-http']);
