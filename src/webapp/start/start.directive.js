@@ -1,6 +1,12 @@
 angular.module('ist-start')
     .directive('startScreen', StartScreenDirective);
 
+/**
+ * @ngdoc directive
+ * @name ist-start:startScreen
+ *
+ * @description Directive for start screen
+ */
 function StartScreenDirective(){
 
     return {

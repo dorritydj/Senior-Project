@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var inject = require('gulp-inject');
 var jasmine = require('gulp-jasmine');
+var docs = require('gulp-ngdocs');
 
 gulp.task('inject', function(){
     var sources = gulp.src([
@@ -15,6 +16,12 @@ gulp.task('inject', function(){
     gulp.src('index.html')
         .pipe(inject(sources, {relative:true}))
         .pipe(gulp.dest(""));
+});
+
+gulp.task('ngDocs', function(){
+    return gulp.src(['webapp/**/*.js'])
+        .pipe(docs.process())
+        .pipe(gulp.dest('./docs'))
 });
 
 gulp.task('tests', function(){

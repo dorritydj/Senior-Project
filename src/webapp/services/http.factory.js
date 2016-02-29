@@ -7,9 +7,7 @@ HttpFactory.$inject = ['$http'];
 function HttpFactory($http){
     var self = this;
 
-    return {
-        http: http
-    };
+    self.request = request;
 
     /* ---------- */
 
