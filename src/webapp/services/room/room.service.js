@@ -14,6 +14,11 @@ function RoomService(http){
 
     /*----------*/
 
+    /**
+     * Returns a promise containing the list of rooms
+     *
+     * @returns {*}
+     */
     function getRoomList(){
         var params = {
 
@@ -26,6 +31,11 @@ function RoomService(http){
         })
     }
 
+    /**
+     * Returns a promise containing the details of a single room
+     *
+     * @returns {*}
+     */
     function getRoomInfo(){
         var params = {
 
@@ -38,6 +48,11 @@ function RoomService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the room was added to the DB
+     *
+     * @returns {*}
+     */
     function addRoom(){
         var params = {
 
@@ -50,6 +65,11 @@ function RoomService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the room was removed from the DB
+     *
+     * @returns {*}
+     */
     function deleteRoom(){
         var params = {
 
@@ -62,6 +82,11 @@ function RoomService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the room was updated in the DB
+     *
+     * @returns {*}
+     */
     function updateRoom(){
         var params = {
 
