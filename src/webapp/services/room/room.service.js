@@ -6,6 +6,8 @@ RoomService.$inject = ['HttpFactory'];
 function RoomService(http){
     var self = this;
 
+    self.filePath = 'php/room';
+
     self.getRoomList = getRoomList;
     self.getRoomInfo = getRoomInfo;
     self.addRoom = addRoom;
