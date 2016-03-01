@@ -15,15 +15,15 @@ else
 
 function validation()
 {
-	if($_POST["roomNumber"] == "" || null)
+	if($_POST["deptCode"] == "" || null)
 	{
 		die("POST data invaild!");
 	}
-	elseif($_POST["deptCode"] == "" || null)
+	elseif($_POST["deptName"] == "" || null)
 	{
 		die("POST data invaild!");
 	}
-	elseif($_POST["roomName"] == "" || null)
+	elseif($_POST["mapAsset"] == "" || null)
 	{
 		die("POST data invaild!");
 	}
@@ -39,17 +39,12 @@ function validation()
 
 if(validation() == "True")
 {
-	$roomNumber = $_POST["roomNumber"].value();
 	$deptCode = $_POST["deptCode"].value();
-	$roomName = $_POST["roomName"].value();
+	$deptName = $_POST["deptName"].value();
+	$mapAsset = $_POST["mapAsset"].value();
 
-	$stmt = $conn->prepare("INSERT INTO Rooms (roomNumber,deptCode,roomName) 
-VALUES (?,?,?)");
-$stmt->bind_param("s", $roomNumber);
-$stmt->bind_param("s", $deptCode);
-$stmt->bind_param("s", $roomName);
-
-$stmt->execute();
+	$stmt = $conn->prepare("UPDATE Department SET deptName='$deptName',mapAsset='$mapAsset' WHERE deptCode='$deptCode')");
+	$stmt->execute();
 
 echo "New record created successfully";
 

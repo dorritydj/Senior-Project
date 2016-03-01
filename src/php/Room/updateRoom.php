@@ -43,13 +43,8 @@ if(validation() == "True")
 	$deptCode = $_POST["deptCode"].value();
 	$roomName = $_POST["roomName"].value();
 
-	$stmt = $conn->prepare("INSERT INTO Rooms (roomNumber,deptCode,roomName) 
-VALUES (?,?,?)");
-$stmt->bind_param("s", $roomNumber);
-$stmt->bind_param("s", $deptCode);
-$stmt->bind_param("s", $roomName);
-
-$stmt->execute();
+	$stmt = $conn->prepare("UPDATE Rooms Set deptCode='$deptCode',roomName='$roomName' where roomNumber='$roomNumber'");
+	$stmt->execute();
 
 echo "New record created successfully";
 

@@ -43,7 +43,7 @@ if(validation() == "True")
 	$deptName = $_POST["deptName"].value();
 	$mapAsset = $_POST["mapAsset"].value();
 
-	$stmt = $conn->prepare("INSERT INTO Users (deptCode,deptName,mapAsset) 
+	$stmt = $conn->prepare("INSERT INTO Department (deptCode,deptName,mapAsset) 
 VALUES (?,?,?)");
 $stmt->bind_param("s", $deptCode);
 $stmt->bind_param("s", $deptName);
