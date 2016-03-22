@@ -8,7 +8,11 @@ var docs = require('gulp-ngdocs');
 
 gulp.task('inject', function(){
     var sources = gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
         'node_modules/angular/angular.js',
+        'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-route/angular-route.min.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
         'webapp/**/*.module.js',
         'webapp/**/*.js'
     ]);

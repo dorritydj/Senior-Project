@@ -8,8 +8,21 @@
  */
 
 angular.module('ist-directory', [
-    'ist-professor',
-    'ist-room',
-    'ist-dept',
-    'ist-start'
+    'ngRoute',
+    'ist-start',
+    'ist-bubble',
+    'ist-info',
 ]);
+
+angular.module('ist-directory')
+    .config(function($routeProvider){
+        $routeProvider.when("/",{
+            templateUrl: "webapp/start/start.html"
+        }).when("/info/:type",{
+            templateUrl: "webapp/infoDisplay/infoDisplay.html",
+            controller: "InfoController as infoCtrl"
+        }).otherwise({
+            redirectTo: "/"
+        })
+    });
+

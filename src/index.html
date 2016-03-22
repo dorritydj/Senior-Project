@@ -7,12 +7,20 @@
     <!-- endinject -->
 
     <!-- inject:js -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
     <script src="webapp/app.module.js"></script>
+    <script src="webapp/bubble/bubble.module.js"></script>
     <script src="webapp/start/start.module.js"></script>
     <script src="webapp/services/department/dept.module.js"></script>
     <script src="webapp/services/professor/professor.module.js"></script>
     <script src="webapp/services/room/room.module.js"></script>
+    <script src="webapp/bubble/bubble.controller.js"></script>
+    <script src="webapp/bubble/bubble.directive.js"></script>
+    <script src="webapp/infoDisplay/info.controller.js"></script>
     <script src="webapp/services/http.factory.js"></script>
     <script src="webapp/start/start.controller.js"></script>
     <script src="webapp/start/start.directive.js"></script>
@@ -22,6 +30,6 @@
     <!-- endinject -->
 </head>
 <body ng-app="ist-directory">
-    <ist-start-screen></ist-start-screen>
+    <ng-view></ng-view>
 </body>
 </html>

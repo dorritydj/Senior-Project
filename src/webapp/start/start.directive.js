@@ -1,5 +1,5 @@
 angular.module('ist-start')
-    .directive('istStartScreen', StartScreenDirective);
+    .directive('istStart', StartScreenDirective);
 
 /**
  * @ngdoc directive
@@ -9,6 +9,10 @@ angular.module('ist-start')
  */
 function StartScreenDirective(){
 
+    function link(scope, element, attrs, ctrl) {
+        console.log("in start directive")
+    }
+
     return {
         link: link,
         templateUrl: 'webapp/start/start.html',
@@ -16,10 +20,4 @@ function StartScreenDirective(){
         controllerAs: 'StartCtrl',
         restrict: 'E'
     };
-
-    /* --------- */
-
-    function link(scope, element, attrs, ctrl) {
-
-    }
 }
