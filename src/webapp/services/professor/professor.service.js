@@ -16,7 +16,11 @@ function ProfessorService(http){
 
     /*----------*/
 
-
+    /**
+     * Returns a promise containing a list of the professor names
+     *
+     * @returns {*}
+     */
     function getProfList(){
         var params = {
 
@@ -29,6 +33,11 @@ function ProfessorService(http){
         })
     }
 
+    /**
+     * Returns a promise containing the information for a single professor
+     *
+     * @returns {*}
+     */
     function getProfInfo(){
         var params = {
 
@@ -41,6 +50,11 @@ function ProfessorService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the professor was added to the DB
+     *
+     * @returns {*}
+     */
     function addProf(){
         var params = {
 
@@ -53,6 +67,11 @@ function ProfessorService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the professor was removed from the DB
+     *
+     * @returns {*}
+     */
     function deleteProf(){
         var params = {
 
@@ -65,6 +84,11 @@ function ProfessorService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the professor was updated in the DB
+     *
+     * @returns {*}
+     */
     function updateProf(){
         var params = {
 

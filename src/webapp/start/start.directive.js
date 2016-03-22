@@ -1,5 +1,5 @@
 angular.module('ist-start')
-    .directive('startScreen', StartScreenDirective);
+    .directive('istStartScreen', StartScreenDirective);
 
 /**
  * @ngdoc directive

@@ -13,7 +13,7 @@ gulp.task('inject', function(){
         'webapp/**/*.js'
     ]);
 
-    gulp.src('index.html')
+    return gulp.src('index.html')
         .pipe(inject(sources, {relative:true}))
         .pipe(gulp.dest(""));
 });

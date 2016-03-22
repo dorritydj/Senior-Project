@@ -16,6 +16,11 @@ function DepartmentService(http){
 
     /*----------*/
 
+    /**
+     * Returns a promise containing the list of all departments
+     *
+     * @returns {*} AngularJS promise
+     */
     function getDeptList(){
         var params = {
 
@@ -28,6 +33,11 @@ function DepartmentService(http){
         })
     }
 
+    /**
+     * Returns a promise containing the information of a single department
+     *
+     * @returns {*}
+     */
     function getDeptInfo(){
         var params = {
 
@@ -40,6 +50,11 @@ function DepartmentService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the department was added to the DB
+     *
+     * @returns {*}
+     */
     function addDept(){
         var params = {
 
@@ -52,6 +67,11 @@ function DepartmentService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the department was removed from the DB
+     *
+     * @returns {*}
+     */
     function deleteDept(){
         var params = {
 
@@ -64,6 +84,11 @@ function DepartmentService(http){
         })
     }
 
+    /**
+     * Returns a promise containing success or error if the department was updated the DB
+     *
+     * @returns {*}
+     */
     function updateDept(){
         var params = {
 
