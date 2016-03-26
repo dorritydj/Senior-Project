@@ -12,7 +12,10 @@ if ($conn->connect_error)
 } 
 else
 {
-	$sql = "SELECT * FROM Staff WHERE staffName='Stephen Zilora'";
+	$idStaff = $_POST["idStaff"];
+	$stmt = $conn->prepare("SELECT from Staff where idStaff=?");
+	$stmt->bind_param("s", $idStaff);
+	$stmt->execute();
 	$result = mysqli_query($conn, $sql);
 	$rows = array();
 	while($r = mysqli_fetch_assoc($result)) 

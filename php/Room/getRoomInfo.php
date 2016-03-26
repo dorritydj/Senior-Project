@@ -12,13 +12,16 @@ if ($conn->connect_error)
 } 
 else
 {
-	$sql = "SELECT * FROM Rooms WHERE roomNumber='2137'";
-	$result = mysqli_query($conn, $sql);
-	$rows = array();
-	while($r = mysqli_fetch_assoc($result)) 
-	{
+$roomNumber = $_POST["roomNumber"];
+$stmt = $conn->prepare("SELECT from Rooms where roomNumber=?");
+$stmt->bind_param("s", $roomNumber);
+$stmt->execute();
+$result = mysqli_query($conn, $sql);
+$rows = array();
+while($r = mysqli_fetch_assoc($result)) 
+{
     	$rows[] = $r;
-	}
+}
 	$msg = "this is some message";
 	$code = 2;
 	$response = array("success" => true, "response" => array("msg" => $msg, "code" => $code), "data" => $rows );
