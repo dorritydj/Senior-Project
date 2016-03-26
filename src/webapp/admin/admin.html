@@ -1,0 +1,16 @@
+<!-- TODO: If not logged in, redirect to login.html, if they are logged in, display this stuff --->
+
+<div ng-switch on="AdminCtrl.page">
+    <div ng-switch-when="choose" >
+        <button ng-click="AdminCtrl.goto('add')">Add Professor/Room</button>
+        <button ng-click="AdminCtrl.goto('update')">Update Professor/Room</button>
+    </div>
+
+    <div ng-switch-when="add" >
+        add something
+    </div>
+
+    <div ng-switch-when="update" >
+        update something
+    </div>
+</div>

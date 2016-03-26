@@ -11,7 +11,8 @@ angular.module('ist-directory', [
     'ngRoute',
     'ist-start',
     'ist-bubble',
-    'ist-info'
+    'ist-info',
+    'ist-admin'
 ]);
 
 angular.module('ist-directory')
@@ -21,6 +22,12 @@ angular.module('ist-directory')
         }).when("/info/:type",{
             templateUrl: "webapp/infoDisplay/infoDisplay.html",
             controller: "InfoController as infoCtrl"
+        }).when('/admin/:page',{
+            templateUrl: "webapp/admin/admin.html",
+            controller: "AdminController as AdminCtrl"
+        }).when('/login', {
+            templateUrl: "webapp/admin/login.html",
+            controller: "AdminController as AdminCtrl"
         }).otherwise({
             redirectTo: "/"
         })
