@@ -26,8 +26,10 @@ function ProfessorService(http){
 
         };
 
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
+        return http.request('http://45.55.234.16/teamOrange/php/Staff/getStaffList.php', params).then(function(data){
+            if(data.success){
+                return data.data;
+            }
         }, function(data){
             //TODO: Fail data here
         })

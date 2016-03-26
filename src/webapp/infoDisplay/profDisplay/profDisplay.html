@@ -1,0 +1,19 @@
+<div ng-repeat="name in ProfDispCtrl.profNames">
+    <button ng-click="ProfDispCtrl.open(name.idStaff)">{{name.staffName}}</button>
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body">
+        {{staff.staffName}}<br/>
+        {{staff.staffOffice}}<br/>
+        {{staff.staffEmail}}<br/>
+        {{staff.staffTitle}}<br/>
+        {{staff.staffPhoneNumber}}<br/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

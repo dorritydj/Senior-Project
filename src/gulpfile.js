@@ -8,18 +8,44 @@ var docs = require('gulp-ngdocs');
 
 gulp.task('inject', function(){
     var sources = gulp.src([
-        'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/angular/angular.js',
-        'node_modules/angular-animate/angular-animate.min.js',
-        'node_modules/angular-route/angular-route.min.js',
-        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
+        '../dist/libs/jquery.min.js',
+        '../dist/libs/angular.js',
+        '../dist/libs/*.js',
+        'webapp/**/*.css',
         'webapp/**/*.module.js',
         'webapp/**/*.js'
     ]);
 
     return gulp.src('index.html')
-        .pipe(inject(sources, {relative:true}))
+        .pipe(inject(sources, {relative:true, ignorePath: '../dist/'}))
         .pipe(gulp.dest(""));
+});
+
+gulp.task('build', ['inject'], function(){
+    var libs = gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/angular/angular.js',
+        'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-route/angular-route.min.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
+    ]);
+
+    var sources = gulp.src([
+        'webapp/**/*.*',
+    ]);
+
+    var index = gulp.src([
+        'index.html'
+    ]);
+
+    libs
+        .pipe(gulp.dest('../dist/libs'));
+
+    sources
+        .pipe(gulp.dest('../dist/webapp'));
+
+    index
+        .pipe(gulp.dest('../dist'))
 });
 
 gulp.task('ngDocs', function(){

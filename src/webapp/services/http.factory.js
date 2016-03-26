@@ -5,11 +5,6 @@ angular.module('ist-http')
 HttpFactory.$inject = ['$http'];
 
 function HttpFactory($http){
-    var self = this;
-
-    self.request = request;
-
-    /* ---------- */
 
     function request(url, params){
         return $http({
@@ -19,5 +14,9 @@ function HttpFactory($http){
         }).then(function(data){
             return data.data;
         })
+    }
+
+    return{
+        request: request
     }
 }

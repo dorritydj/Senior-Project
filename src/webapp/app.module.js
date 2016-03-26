@@ -11,7 +11,7 @@ angular.module('ist-directory', [
     'ngRoute',
     'ist-start',
     'ist-bubble',
-    'ist-info',
+    'ist-info'
 ]);
 
 angular.module('ist-directory')
