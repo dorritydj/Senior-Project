@@ -6,7 +6,7 @@ angular.module('ist-profDisplay')
 
 function ProfDisplayDirective(){
     function link(scope, attr, elem, ctrl){
-        ctrl.loadProfList();
+        ctrl.loadProfList(scope.code);
     }
 
     return {
@@ -14,6 +14,9 @@ function ProfDisplayDirective(){
         templateUrl: 'webapp/infoDisplay/profDisplay/profDisplay.html',
         controller: 'ProfDisplayController',
         controllerAs: 'ProfDispCtrl',
-        restrict: 'E'
+        restrict: 'E',
+        scope: {
+            code: "@"
+        }
     };
 }

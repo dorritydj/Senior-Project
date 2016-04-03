@@ -3,11 +3,11 @@
  */
 angular.module('ist-profDisplay')
     .controller("ProfDisplayController", ProfDisplayController)
-    .controller("ModalInstanceCtrl", ModalInstanceCtrl);
+    .controller("ProfModalCtrl", ProfModalCtrl);
 
-ProfDisplayController.$inject = ['ProfessorService', '$uibModal', '$scope'];
+ProfDisplayController.$inject = ['ProfessorService', '$uibModal'];
 
-function ProfDisplayController(profServ, $uibModal, $scope){
+function ProfDisplayController(profServ, $uibModal){
     var self = this;
 
     self.profNames = [];
@@ -15,9 +15,17 @@ function ProfDisplayController(profServ, $uibModal, $scope){
     self.loadProfList = loadProfList;
     self.open = open;
 
-    function loadProfList(){
+    function loadProfList(code){
         profServ.getProfList().then(function(data){
-            self.profNames = data;
+            if(code !== "ALL"){
+                for(var i = 0; i < data.length; i++){
+                    if(data[i].department == code){
+                        self.profNames.push(data[i]);
+                    }
+                }
+            }else if(code === "ALL"){
+                self.profNames = data;
+            }
         });
     }
 
@@ -26,8 +34,8 @@ function ProfDisplayController(profServ, $uibModal, $scope){
             if(self.profNames[i].idStaff == id){
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: 'myModalContent.html',
-                    controller: 'ModalInstanceCtrl',
+                    templateUrl: 'profModal.html',
+                    controller: 'ProfModalCtrl',
                     size: 'lg',
                     resolve: {
                         staff: function(){
@@ -40,9 +48,9 @@ function ProfDisplayController(profServ, $uibModal, $scope){
     }
 }
 
-ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance', 'staff'];
+ProfModalCtrl.$inject = ['$scope', '$uibModalInstance', 'staff'];
 
-function ModalInstanceCtrl($scope, $uibModal, staff){
+function ProfModalCtrl($scope, $uibModal, staff){
     var self = this;
 
     console.log(staff);

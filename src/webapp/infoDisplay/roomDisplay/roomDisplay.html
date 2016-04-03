@@ -1,0 +1,15 @@
+<div ng-repeat="room in RoomDispCtrl.roomList">
+    <button ng-click="RoomDispCtrl.open(room.roomId)">Room: {{room.roomNumber}}</button>
+</div>
+
+<script type="text/ng-template" id="roomModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body">
+        {{rooms.roomNumber}}<br/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

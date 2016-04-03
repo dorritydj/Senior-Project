@@ -9,7 +9,6 @@ function ProfessorService(http){
 
 
     self.getProfList = getProfList;
-    self.getProfInfo = getProfInfo;
     self.addProf = addProf;
     self.deleteProf = deleteProf;
     self.updateProf = updateProf;
@@ -26,27 +25,10 @@ function ProfessorService(http){
 
         };
 
-        return http.request('http://45.55.234.16/teamOrange/php/Staff/getStaffList.php', params).then(function(data){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffList.php', params).then(function(data){
             if(data.success){
                 return data.data;
             }
-        }, function(data){
-            //TODO: Fail data here
-        })
-    }
-
-    /**
-     * Returns a promise containing the information for a single professor
-     *
-     * @returns {*}
-     */
-    function getProfInfo(){
-        var params = {
-
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
         }, function(data){
             //TODO: Fail data here
         })

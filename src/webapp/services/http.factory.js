@@ -8,9 +8,10 @@ function HttpFactory($http){
 
     function request(url, params){
         return $http({
-            method: 'GET',
+            method: 'POST',
             url: url,
-            params: params
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: $.param(params)
         }).then(function(data){
             return data.data;
         })

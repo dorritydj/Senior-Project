@@ -19,14 +19,11 @@ angular.module('ist-directory')
     .config(function($routeProvider){
         $routeProvider.when("/",{
             templateUrl: "webapp/start/start.html"
-        }).when("/info/:type",{
+        }).when("/info/:type/:code?",{
             templateUrl: "webapp/infoDisplay/infoDisplay.html",
             controller: "InfoController as infoCtrl"
-        }).when('/admin/:page',{
-            templateUrl: "webapp/admin/admin.html",
-            controller: "AdminController as AdminCtrl"
-        }).when('/login', {
-            templateUrl: "webapp/admin/login.html",
+        }).when('/admin/:page?',{
+            templateUrl: "webapp/admin/admin.php",
             controller: "AdminController as AdminCtrl"
         }).otherwise({
             redirectTo: "/"

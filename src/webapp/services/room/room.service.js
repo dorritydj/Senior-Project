@@ -9,7 +9,6 @@ function RoomService(http){
     self.filePath = 'php/room';
 
     self.getRoomList = getRoomList;
-    self.getRoomInfo = getRoomInfo;
     self.addRoom = addRoom;
     self.deleteRoom = deleteRoom;
     self.updateRoom = updateRoom;
@@ -26,25 +25,10 @@ function RoomService(http){
 
         };
 
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
-        }, function(data){
-            //TODO: Fail data here
-        })
-    }
-
-    /**
-     * Returns a promise containing the details of a single room
-     *
-     * @returns {*}
-     */
-    function getRoomInfo(){
-        var params = {
-
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Room/getRooms.php', params).then(function(data){
+            if(data.success === true){
+                return data.data;
+            }
         }, function(data){
             //TODO: Fail data here
         })

@@ -6,17 +6,16 @@ angular.module('ist-login')
 
 LoginService.$inject = ['HttpFactory'];
 
-function LoginService(){
+function LoginService(http){
     var self = this;
 
-    self.login = login;
-    self.logout = logout;
+    self.getSession = getSession;
 
-    function login(){
+    function getSession(u,p){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/User/getSession.php', {}).then(function(data){
+            return data;
+        }, function(data){
 
-    }
-
-    function logout(){
-
+        });
     }
 }

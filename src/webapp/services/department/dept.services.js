@@ -26,8 +26,9 @@ function DepartmentService(http){
 
         };
 
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Department/getDepartments.php', params).then(function(data){
+            console.log(data.data);
+            return data.data;
         }, function(data){
             //TODO: Fail data here
         })

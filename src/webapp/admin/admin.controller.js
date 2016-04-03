@@ -4,21 +4,66 @@
 angular.module('ist-admin')
     .controller('AdminController', AdminController);
 
-AdminController.$inject = ['$routeParams','$location'];
+AdminController.$inject = ['$routeParams','$location', 'LoginService'];
 
-function AdminController($routeParams, $location){
+function AdminController($routeParams, $location, loginServ){
     var self = this;
 
     self.page = $routeParams.page;
-    self.login = login;
+    self.user = {};
+    self.getSession = getSession;
     self.goto = goto;
+    self.add = add;
+    self.update = update;
+    self.deleteStuff = deleteStuff;
 
-    function login(u, p){
-        //TODO: Call login functionality here
-        $location.path('/admin/choose');
+    function init(){
+        getSession();
+    }
+
+    init();
+
+    function getSession(){
+        loginServ.getSession().then(function(data){
+            self.user = data.data;
+        }, function(data){
+
+        });
     }
 
     function goto(page){
         $location.path('/admin/'+page);
+    }
+
+    function addProf(){
+
+    }
+
+    function addRoom(){
+
+    }
+
+    function updateProf(){
+
+    }
+
+    function updateRoom(){
+
+    }
+
+    function deleteProf(){
+
+    }
+
+    function deleteRoom(){
+
+    }
+
+    function addUser(){
+
+    }
+
+    function removeUser(){
+
     }
 }
