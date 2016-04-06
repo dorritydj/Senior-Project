@@ -15,11 +15,15 @@ if(!isset($_SESSION['username'])){
     </div>
 
     <div ng-switch-when="add" >
-        add something
+        <ist-admin-add
+            dept="{{AdminCtrl.user.deptCode}}"
+        ></ist-admin-add>
     </div>
 
     <div ng-switch-when="update" >
-        update something
+        <ist-admin-update
+            dept="{{AdminCtrl.user.deptCode}}"
+        ></ist-admin-update>
     </div>
 
     <div ng-switch-when="user"  >

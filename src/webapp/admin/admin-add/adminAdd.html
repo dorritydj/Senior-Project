@@ -1,0 +1,20 @@
+<div>
+    <form>
+        <label>Name:</label><input type="text" ng-model="adAddCtrl.prof.staffName"/>
+        <label>Department: </label><label>{{adAddCtrl.dept}}</label>
+        <label>Email:</label><input type="text" ng-model="adAddCtrl.prof.staffEmail"/>
+        <label>Title:</label><input type="text" ng-model="adAddCtrl.prof.staffTitle"/>
+        <label>Office Number:</label><input type="text" ng-model="adAddCtrl.prof.staffOffice"/>
+        <label>Phone:</label><input type="text" ng-model="adAddCtrl.prof.staffPhoneNumber"/>
+        <button ng-click="adAddCtrl.addProf(adAddCtrl.prof)">Add</button>
+    </form>
+</div>
+
+<div>
+    <form>
+        <label>Name:</label><input type="text" ng-model="adAddCtrl.room.roomName"/>
+        <label>Number:</label><input type="text" ng-model="adAddCtrl.room.roomNumber"/>
+        <label>Department: </label><label>{{adAddCtrl.dept}}</label>
+        <button ng-click="adAddCtrl.addRoom(adAddCtrl.room)">Add</button>
+    </form>
+</div>

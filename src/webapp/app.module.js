@@ -25,6 +25,8 @@ angular.module('ist-directory')
         }).when('/admin/:page?',{
             templateUrl: "webapp/admin/admin.php",
             controller: "AdminController as AdminCtrl"
+        }).when('/admin/',{
+            redirectTo: "/admin/choose"
         }).otherwise({
             redirectTo: "/"
         })

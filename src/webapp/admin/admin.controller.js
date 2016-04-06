@@ -13,9 +13,6 @@ function AdminController($routeParams, $location, loginServ){
     self.user = {};
     self.getSession = getSession;
     self.goto = goto;
-    self.add = add;
-    self.update = update;
-    self.deleteStuff = deleteStuff;
 
     function init(){
         getSession();
@@ -26,6 +23,7 @@ function AdminController($routeParams, $location, loginServ){
     function getSession(){
         loginServ.getSession().then(function(data){
             self.user = data.data;
+            console.log(self.user);
         }, function(data){
 
         });
@@ -40,22 +38,6 @@ function AdminController($routeParams, $location, loginServ){
     }
 
     function addRoom(){
-
-    }
-
-    function updateProf(){
-
-    }
-
-    function updateRoom(){
-
-    }
-
-    function deleteProf(){
-
-    }
-
-    function deleteRoom(){
 
     }
 

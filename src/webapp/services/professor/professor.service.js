@@ -12,6 +12,7 @@ function ProfessorService(http){
     self.addProf = addProf;
     self.deleteProf = deleteProf;
     self.updateProf = updateProf;
+    self.getProfForDept = getProfForDept;
 
     /*----------*/
 
@@ -21,10 +22,6 @@ function ProfessorService(http){
      * @returns {*}
      */
     function getProfList(){
-        var params = {
-
-        };
-
         return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffList.php', params).then(function(data){
             if(data.success){
                 return data.data;
@@ -34,17 +31,22 @@ function ProfessorService(http){
         })
     }
 
+    function getProfForDept(dept){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffByDepartment.php', {deptCode: dept}).then(function(data){
+            if(data.success){
+                return data.data;
+            }
+        })
+    }
+
     /**
      * Returns a promise containing success or error if the professor was added to the DB
      *
      * @returns {*}
      */
-    function addProf(){
-        var params = {
+    function addProf(prof){
 
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/insertStaff.php', prof).then(function(data){
             //TODO: Success data here
         }, function(data){
             //TODO: Fail data here
@@ -56,13 +58,11 @@ function ProfessorService(http){
      *
      * @returns {*}
      */
-    function deleteProf(){
-        var params = {
+    function deleteProf(prof){
 
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/deleteStaff.php', prof).then(function(data){
             //TODO: Success data here
+            return data;
         }, function(data){
             //TODO: Fail data here
         })
@@ -73,13 +73,10 @@ function ProfessorService(http){
      *
      * @returns {*}
      */
-    function updateProf(){
-        var params = {
-
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
+    function updateProf(prof){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/updateStaff.php', prof).then(function(data){
             //TODO: Success data here
+            return data;
         }, function(data){
             //TODO: Fail data here
         })
