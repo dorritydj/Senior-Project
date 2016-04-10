@@ -1,3 +1,8 @@
 <div ng-repeat="dept in DeptDispCtrl.departments">
-    <button ng-click="DeptDispCtrl.open(dept.deptCode)">{{dept.deptName}} - {{dept.deptCode}}</button>
+    <ist-bubble
+        title="{{dept.deptName}} - {{dept.deptCode}}"
+        goto="/info/professors/{{dept.deptCode}}"
+        ></ist-bubble>
+
+    <!--<button ng-click="DeptDispCtrl.open(dept.deptCode)">{{dept.deptName}} - {{dept.deptCode}}</button>-->
 </div>

@@ -21,7 +21,7 @@ function DeptDisplayController(deptServ, $loc){
     }
 
     function open(id){
-        $loc.path('info/professor/' + id);
+        $loc.path('info/professors/' + id);
     }
 }
 

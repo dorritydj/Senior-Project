@@ -1,35 +1,34 @@
-<div ng-repeat="name in ProfDispCtrl.profNames">
-    <button ng-click="ProfDispCtrl.open(name.idStaff)">{{name.staffName}}</button>
+<div class="center-block">
+    <button class="initDisplay" ng-click="ProfDispCtrl.open(name.idStaff)" ng-repeat="name in ProfDispCtrl.profNames">
+        <img src="http://{{name.imageAsset}}"/>
+        <h4>{{name.staffName}}</h4>
+    </button>
 </div>
 
-<script type="text/ng-template" id="profModal.html">
-    <div class="modal-body">
-
-        <div>
-            <img ng-src="{{staff.imageAsset}}"/>
-        </div>
-
-        <div>
-            <!--prof info here-->
-        </div>
-
-        <div>
-            <!--map here-->
-        </div>
-
-        {{staff.staffName}}<br/>
-        {{staff.staffOffice}}<br/>
-        {{staff.staffEmail}}<br/>
-        {{staff.staffTitle}}<br/>
-        {{staff.staffPhoneNumber}}<br/>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
-
 <style>
-    .modal-body, .modal-footer{
+    img{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .modal-header h2{
+        float: right;
+    }
+
+    .center-block{
+        width: 100%
+    }
+
+    .initDisplay{
+        float: left;
+        margin: 2% 4%;
         background-color: #04172E;
+        color: white;
+        border: none;
+    }
+
+    .initDisplay h4{
+        text-align: center;
     }
 </style>

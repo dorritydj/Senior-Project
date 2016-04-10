@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <img src="{{img}}"/>
+    <h2>{{staff.staffName}}<br/></h2>
+</div>
+
+<div class="modal-body">
+
+    <div class="displayDiv">
+        <label class="col-sm-8 control-label">Office Number: </label><p class="col-sm-4">{{staff.staffOffice}}</p><br/>
+        <label class="col-sm-8 control-label">Email: </label><p class="col-sm-4">{{staff.staffEmail}}</p><br/>
+        <label class="col-sm-8 control-label">Title: </label><p class="col-sm-4">{{staff.staffTitle}}</p><br/>
+        <label class="col-sm-8 control-label">Phone Number: </label> <!--<p class="col-sm-5">{{staff.staffPhoneNumber}}</p><br/>-->
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="ok()">Okay</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
+
+<style>
+    .modal-body, .modal-footer, .modal-header{
+        background-color: #04172E;
+    }
+
+    .displayDiv{
+        width: 30%;
+    }
+
+    img{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+</style>

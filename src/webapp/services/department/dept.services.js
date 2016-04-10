@@ -9,7 +9,6 @@ function DepartmentService(http){
 
 
     self.getDeptList = getDeptList;
-    self.getDeptInfo = getDeptInfo;
     self.addDept = addDept;
     self.deleteDept = deleteDept;
     self.updateDept = updateDept;

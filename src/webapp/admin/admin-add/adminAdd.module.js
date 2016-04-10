@@ -6,5 +6,6 @@
 
 angular.module('ist-admin-add', [
     'ist-room',
-    'ist-professor'
+    'ist-professor',
+    'ist-profDisplay'
 ]);

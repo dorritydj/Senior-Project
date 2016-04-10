@@ -17,6 +17,7 @@ function ProfDisplayController(profServ, $uibModal){
 
     function loadProfList(code){
         profServ.getProfList().then(function(data){
+            console.log(data);
             if(code !== "ALL"){
                 for(var i = 0; i < data.length; i++){
                     if(data[i].department == code){
@@ -26,15 +27,18 @@ function ProfDisplayController(profServ, $uibModal){
             }else if(code === "ALL"){
                 self.profNames = data;
             }
+
+            console.log(self.profNames)
         });
     }
 
     function open(id){
+        console.log(id);
         for(var i = 0; i < self.profNames.length; i++){
             if(self.profNames[i].idStaff == id){
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: 'profModal.html',
+                    templateUrl: 'webapp/infoDisplay/profDisplay/profModal.html',
                     controller: 'ProfModalCtrl',
                     size: 'lg',
                     resolve: {
@@ -56,8 +60,14 @@ function ProfModalCtrl($scope, $uibModal, staff){
     console.log(staff);
     $scope.staff = staff;
 
+    $scope.img = "http://" + staff.imageAsset;
+
     $scope.cancel = function() {
-        $uibModal.close();
+        $uibModal.dismiss();
+    }
+
+    $scope.ok = function(){
+        $uibModal.close("result");
     }
 }
 

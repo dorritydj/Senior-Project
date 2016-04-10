@@ -1,11 +1,16 @@
 angular.module('ist-bubble')
     .controller("BubbleController", BubbleController);
 
-BubbleController.$inject = [];
+BubbleController.$inject = ['$location'];
 
-function BubbleController(){
+function BubbleController($loc){
     var self = this;
 
     self.title = "";
-    self.link = "";
+
+    self.open = open;
+
+    function open(link){
+        $loc.path(link);
+    }
 }

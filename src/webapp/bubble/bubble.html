@@ -1,19 +1,22 @@
-<a ng-href="#{{bubbleCtrl.link}}">{{bubbleCtrl.title}}</a>
+<button ng-click="bubbleCtrl.open(bubbleCtrl.link)">{{bubbleCtrl.title}}</button>
 
 <style>
-    ist-bubble a{
-        border: 2px solid black;
+    ist-bubble button{
+        width: 18%;
+        height:auto;
+
         border-radius: 50%;
-        padding: 5% 5%;
-        text-align: center;
-        top: 50px;
+        border: 3px solid #5D97CF;
+        overflow:hidden;
 
-        text-decoration: none;
-        color: black;
-        background-color: orange;
-        font-size: 200%;
-        word-wrap: break-word;
+        background: #27588F;
 
-        margin-left: 7%;
+        color: white;
+        font-size: 2em;
+        padding: 3%;
+
+        text-align:center;
+        margin-left: 11%;
+
     }
 </style>

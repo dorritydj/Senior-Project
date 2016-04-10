@@ -1,9 +1,9 @@
 angular.module('ist-admin-add')
     .controller("AdminAddController", AdminAddController);
 
-AdminAddController.$inject = ['ProfessorService', 'RoomService'];
+AdminAddController.$inject = ['ProfessorService', 'RoomService', '$uibModal'];
 
-function AdminAddController(profServ, roomServ){
+function AdminAddController(profServ, roomServ, $uibModal){
     var self = this;
 
     self.addProf = addProf;
@@ -15,7 +15,21 @@ function AdminAddController(profServ, roomServ){
     self.category = "Professor";
 
     function addProf(prof){
-        profServ.addProf(prof);
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'webapp/infoDisplay/profDisplay/profModal.html',
+            controller: 'ProfModalCtrl',
+            size: 'lg',
+            resolve: {
+                staff: function(){
+                    return self.prof;
+                }
+            }
+        });
+
+        modalInstance.result.then(function(){
+            profServ.addProf(prof);
+        });
     }
 
     function addRoom(room){
