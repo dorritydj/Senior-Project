@@ -22,7 +22,7 @@ function ProfessorService(http){
      * @returns {*}
      */
     function getProfList(){
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffList.php', params).then(function(data){
+        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffList.php', {}).then(function(data){
             if(data.success){
                 return data.data;
             }

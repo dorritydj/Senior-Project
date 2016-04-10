@@ -1,23 +1,84 @@
 <div>
     <h2>Enter Information</h2>
 
-    <form>
-        <p><label>Name: </label><input type="text" ng-model="adAddCtrl.prof.staffName"/></p>
-        <p><label>Department: </label>{{adAddCtrl.dept}}</p>
-        <p><label>Email: </label><input type="text" ng-model="adAddCtrl.prof.staffEmail"/></p>
-        <p><label>Title: </label><input type="text" ng-model="adAddCtrl.prof.staffTitle"/></p>
-        <p><label>Office Number: </label><input type="text" ng-model="adAddCtrl.prof.staffOffice"/></p>
-        <p><label>Phone: </label><input type="text" ng-model="adAddCtrl.prof.staffPhoneNumber"/></p>
-        <p><button ng-click="adAddCtrl.addProf(adAddCtrl.prof)">Add</button></p>
-    </form>
-</div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Category: </label>
+            <div class="col-sm-10">
+                <select ng-model="adAddCtrl.category">
+                    <option>Professor</option>
+                    <option>Room</option>
+                </select>
+            </div>
+        </div>
 
-<div>
-    <form>
-        <p><label>Name: </label><input type="text" ng-model="adAddCtrl.room.roomName"/></p>
-        <p><label>Number: </label><input type="text" ng-model="adAddCtrl.room.roomNumber"/></p>
-        <p><label>Department: </label>{{adAddCtrl.dept}}</p>
-        <p><button ng-click="adAddCtrl.addRoom(adAddCtrl.room)">Add</button></p>
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Name: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.room.roomName"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Room'" class="form-group">
+            <label class="col-sm-2 control-label">Name: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffPhoneNumber"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Department: </label>
+            <div class="col-sm-10">
+                <label>{{adAddCtrl.dept}}</label>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'"  class="form-group">
+            <label class="col-sm-2 control-label">Email: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffEmail"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Title: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffTitle"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Office Number: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffOffice"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Room'" class="form-group">
+            <label class="col-sm-2 control-label">Number: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.room.roomNumber"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Phone: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffPhoneNumber"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default" ng-click="adAddCtrl.addProf(adAddCtrl.prof)">Add Professor</button>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Room'" class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default" ng-click="adAddCtrl.addRoom(adAddCtrl.room)">Add Room</button>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -27,4 +88,12 @@
         text-align: center;
     }
 
+    form{
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    select{
+        color: black;
+    }
 </style>

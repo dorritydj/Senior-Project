@@ -12,6 +12,7 @@ function AdminAddController(profServ, roomServ){
     self.prof = {};
     self.room = {};
     self.dept = "";
+    self.category = "Professor";
 
     function addProf(prof){
         profServ.addProf(prof);
