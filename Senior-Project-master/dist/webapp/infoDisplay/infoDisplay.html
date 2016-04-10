@@ -1,0 +1,17 @@
+<div ng-switch on="infoCtrl.route">
+
+    <div ng-switch-when="professors">
+        <ist-prof
+            code="{{infoCtrl.code}}"
+        ></ist-prof>
+    </div>
+
+    <div ng-switch-when="rooms">
+        <ist-room></ist-room>
+    </div>
+
+    <div ng-switch-when="departments">
+        <ist-dept></ist-dept>
+    </div>
+
+</div>

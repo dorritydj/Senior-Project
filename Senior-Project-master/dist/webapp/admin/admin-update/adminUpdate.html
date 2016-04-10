@@ -1,0 +1,22 @@
+<div ng-repeat="profs in adUpdateCtrl.profs">
+    <form>
+        <label>Name:</label><input type="text" ng-model="profs.staffName"/>
+        <label>Email:</label><input type="text" ng-model="profs.staffEmail"/>
+        <label>Title:</label><input type="text" ng-model="profs.staffTitle"/>
+        <label>Office Number:</label><input type="text" ng-model="profs.staffOffice"/>
+        <label>Phone:</label><input type="text" ng-model="profs.staffPhoneNumber"/>
+        <button ng-click="adUpdateCtrl.updateProf(profs)">Update</button>
+        <button ng-click="adUpdateCtrl.deleteProf(profs)">Delete</button>
+    </form>
+    <hr/>
+</div>
+
+
+<div ng-repeat="room in adUpdateCtrl.rooms">
+    <form>
+        <label>Number:</label><input type="text" ng-model="room.roomNumber"/>
+        <button ng-click="adUpdateCtrl.updateRoom(room)">Update</button>
+        <button ng-click="adUpdateCtrl.deleteRoom(room)">Delete</button>
+    </form>
+    <hr/>
+</div>
