@@ -3,10 +3,20 @@
 </div>
 
 <script type="text/ng-template" id="profModal.html">
-    <div class="modal-header">
-        <h3 class="modal-title">I'm a modal!</h3>
-    </div>
     <div class="modal-body">
+
+        <div>
+            <img ng-src="{{staff.imageAsset}}"/>
+        </div>
+
+        <div>
+            <!--prof info here-->
+        </div>
+
+        <div>
+            <!--map here-->
+        </div>
+
         {{staff.staffName}}<br/>
         {{staff.staffOffice}}<br/>
         {{staff.staffEmail}}<br/>
@@ -17,3 +27,9 @@
         <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
     </div>
 </script>
+
+<style>
+    .modal-body, .modal-footer{
+        background-color: #04172E;
+    }
+</style>

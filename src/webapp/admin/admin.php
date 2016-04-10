@@ -8,10 +8,10 @@ if(!isset($_SESSION['username'])){
 
 <div ng-switch on="AdminCtrl.page">
     <div ng-switch-when="choose" >
-        <button ng-click="AdminCtrl.goto('add')">Add Professor/Room</button>
-        <button ng-click="AdminCtrl.goto('update')">Update Professor/Room</button>
+        <button class="btn btn-defualt" ng-click="AdminCtrl.goto('add')">Add Professor/Room</button>
+        <button class="btn btn-defualt" ng-click="AdminCtrl.goto('update')">Update Professor/Room</button>
 
-        <button ng-if="AdminCtrl.user.authLevel == 'super'" ng-click="AdminCtrl.goto('user')">Add New User</button>
+        <button class="btn btn-defualt" ng-if="AdminCtrl.user.authLevel == 'super'" ng-click="AdminCtrl.goto('user')">Add New User</button>
     </div>
 
     <div ng-switch-when="add" >
@@ -36,3 +36,8 @@ if(!isset($_SESSION['username'])){
         </div>
     </div>
 </div>
+<style>
+    button{
+        color: black;
+    }
+</style>

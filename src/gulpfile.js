@@ -17,9 +17,12 @@ gulp.task('inject', function(){
         'webapp/**/*.js'
     ]);
 
-    return gulp.src('index.html')
+    gulp.src(['index.html', 'webapp/admin/login.php'])
         .pipe(inject(sources, {relative:true, ignorePath: '../dist/'}))
         .pipe(gulp.dest(""));
+
+    return gulp.src('login.php')
+        .pipe(gulp.dest('webapp/admin/'))
 });
 
 gulp.task('build', ['inject'], function(){
