@@ -11,6 +11,7 @@ gulp.task('inject', function(){
         '../dist/libs/jquery.min.js',
         '../dist/libs/angular.js',
         '../dist/libs/*.js',
+        '../dist/libs/*.css',
         'webapp/**/*.css',
         'webapp/**/*.module.js',
         'webapp/**/*.js'
@@ -27,7 +28,9 @@ gulp.task('build', ['inject'], function(){
         'node_modules/angular/angular.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'node_modules/angular-route/angular-route.min.js',
-        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
+        'node_modules/bootstrap/dist/css/bootstrap.min.css'
     ]);
 
     var sources = gulp.src([

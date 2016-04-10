@@ -1,20 +1,30 @@
 <div>
+    <h2>Enter Information</h2>
+
     <form>
-        <label>Name:</label><input type="text" ng-model="adAddCtrl.prof.staffName"/>
-        <label>Department: </label><label>{{adAddCtrl.dept}}</label>
-        <label>Email:</label><input type="text" ng-model="adAddCtrl.prof.staffEmail"/>
-        <label>Title:</label><input type="text" ng-model="adAddCtrl.prof.staffTitle"/>
-        <label>Office Number:</label><input type="text" ng-model="adAddCtrl.prof.staffOffice"/>
-        <label>Phone:</label><input type="text" ng-model="adAddCtrl.prof.staffPhoneNumber"/>
-        <button ng-click="adAddCtrl.addProf(adAddCtrl.prof)">Add</button>
+        <p><label>Name: </label><input type="text" ng-model="adAddCtrl.prof.staffName"/></p>
+        <p><label>Department: </label>{{adAddCtrl.dept}}</p>
+        <p><label>Email: </label><input type="text" ng-model="adAddCtrl.prof.staffEmail"/></p>
+        <p><label>Title: </label><input type="text" ng-model="adAddCtrl.prof.staffTitle"/></p>
+        <p><label>Office Number: </label><input type="text" ng-model="adAddCtrl.prof.staffOffice"/></p>
+        <p><label>Phone: </label><input type="text" ng-model="adAddCtrl.prof.staffPhoneNumber"/></p>
+        <p><button ng-click="adAddCtrl.addProf(adAddCtrl.prof)">Add</button></p>
     </form>
 </div>
 
 <div>
     <form>
-        <label>Name:</label><input type="text" ng-model="adAddCtrl.room.roomName"/>
-        <label>Number:</label><input type="text" ng-model="adAddCtrl.room.roomNumber"/>
-        <label>Department: </label><label>{{adAddCtrl.dept}}</label>
-        <button ng-click="adAddCtrl.addRoom(adAddCtrl.room)">Add</button>
+        <p><label>Name: </label><input type="text" ng-model="adAddCtrl.room.roomName"/></p>
+        <p><label>Number: </label><input type="text" ng-model="adAddCtrl.room.roomNumber"/></p>
+        <p><label>Department: </label>{{adAddCtrl.dept}}</p>
+        <p><button ng-click="adAddCtrl.addRoom(adAddCtrl.room)">Add</button></p>
     </form>
 </div>
+
+<style>
+    h2{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+</style>
