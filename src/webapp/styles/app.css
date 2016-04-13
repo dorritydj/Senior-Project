@@ -11,3 +11,22 @@ button{
 input{
     color: black;
 }
+
+.formCircleContianer
+ {
+    border-radius: 50%;
+    background: #27588F;
+    border: 3px solid white;
+    width: 16%;
+    height: auto;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 39%;
+}
+
+form{
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    }

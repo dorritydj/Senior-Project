@@ -15,6 +15,7 @@ function AdminUpdateController(profServ, roomServ){
     self.profs = [];
     self.rooms = [];
     self.dept = "";
+    self.category = "Professor";
 
     function getInfoForDept(){
         profServ.getProfForDept(self.dept).then(function(data){

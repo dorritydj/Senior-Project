@@ -22,11 +22,9 @@ function AdminController($routeParams, $location, loginServ){
 
     function getSession(){
         loginServ.getSession().then(function(data){
+            console.log(data);
             self.user = data.data;
-            console.log(self.user);
-        }, function(data){
-
-        });
+        })
     }
 
     function goto(page){

@@ -22,7 +22,7 @@ function ProfessorService(http){
      * @returns {*}
      */
     function getProfList(){
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffList.php', {}).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Staff/getStaffList.php', {}).then(function(data){
             if(data.success){
                 return data.data;
             }
@@ -32,7 +32,7 @@ function ProfessorService(http){
     }
 
     function getProfForDept(dept){
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/getStaffByDepartment.php', {deptCode: dept}).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Staff/getStaffByDepartment.php', {deptCode: dept}).then(function(data){
             if(data.success){
                 return data.data;
             }
@@ -46,7 +46,7 @@ function ProfessorService(http){
      */
     function addProf(prof){
 
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/insertStaff.php', prof).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Staff/insertStaff.php', prof).then(function(data){
             //TODO: Success data here
         }, function(data){
             //TODO: Fail data here
@@ -60,7 +60,7 @@ function ProfessorService(http){
      */
     function deleteProf(prof){
 
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/deleteStaff.php', prof).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Staff/deleteStaff.php', prof).then(function(data){
             //TODO: Success data here
             return data;
         }, function(data){
@@ -74,7 +74,7 @@ function ProfessorService(http){
      * @returns {*}
      */
     function updateProf(prof){
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Staff/updateStaff.php', prof).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Staff/updateStaff.php', prof).then(function(data){
             //TODO: Success data here
             return data;
         }, function(data){

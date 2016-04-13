@@ -26,7 +26,7 @@ function RoomService(http){
 
         };
 
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Room/getRooms.php', params).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Room/getRooms.php', params).then(function(data){
             if(data.success === true){
                 return data.data;
             }
@@ -36,7 +36,7 @@ function RoomService(http){
     }
 
     function getRoomForDept(dept){
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Room/getRoomsByDepartment.php', {deptCode: dept}).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Room/getRoomsByDepartment.php', {deptCode: dept}).then(function(data){
             if(data.success){
                 return data.data;
             }
@@ -50,7 +50,7 @@ function RoomService(http){
      */
     function addRoom(room){
 
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Room/insertRoom.php', room).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Room/insertRoom.php', room).then(function(data){
             //TODO: Success data here
         }, function(data){
             //TODO: Fail data here
@@ -64,7 +64,7 @@ function RoomService(http){
      */
     function deleteRoom(room){
 
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Room/deleteRoom.php', room).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Room/deleteRoom.php', room).then(function(data){
             //TODO: Success data here
             return data;
         }, function(data){
@@ -79,7 +79,7 @@ function RoomService(http){
      */
     function updateRoom(room){
 
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/Room/updateRoom.php', room).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/Room/updateRoom.php', room).then(function(data){
             //TODO: Success data here
         }, function(data){
             //TODO: Fail data here

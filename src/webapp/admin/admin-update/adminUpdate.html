@@ -1,22 +1,94 @@
-<div ng-repeat="profs in adUpdateCtrl.profs">
-    <form>
-        <label>Name:</label><input type="text" ng-model="profs.staffName"/>
-        <label>Email:</label><input type="text" ng-model="profs.staffEmail"/>
-        <label>Title:</label><input type="text" ng-model="profs.staffTitle"/>
-        <label>Office Number:</label><input type="text" ng-model="profs.staffOffice"/>
-        <label>Phone:</label><input type="text" ng-model="profs.staffPhoneNumber"/>
-        <button ng-click="adUpdateCtrl.updateProf(profs)">Update</button>
-        <button ng-click="adUpdateCtrl.deleteProf(profs)">Delete</button>
+<div>
+    <h2>Update Information</h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Category:</label>
+            <div class="col-sm-10">
+                <select class="addSelect" ng-model="adUpdateCtrl.category">
+                    <option>Professor</option>
+                    <option>Room</option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-if="adUpdateCtrl.category == 'Professor'" ng-repeat="profs in adUpdateCtrl.profs">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="profs.staffName"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="profs.staffEmail"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Title:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="profs.staffTitle"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Office Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="profs.staffOffice"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Phone:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="profs.staffPhoneNumber"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button class="bttns btn btn-warning" ng-click="adUpdateCtrl.updateProf(profs)">Update</button>
+                <button class="bttns btn btn-danger" ng-click="adUpdateCtrl.deleteProf(profs)">Delete</button>
+            </div>
+            <br/>
+        </div>
+
+        <div ng-repeat="room in adUpdateCtrl.rooms">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="room.roomNumber"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="bttns btn btn-warning" ng-click="adUpdateCtrl.updateRoom(room)">Update</button>
+                <button class="bttns btn btn-danger" ng-click="adUpdateCtrl.deleteRoom(room)">Delete</button>
+            </div>
+            <br/>
+        </div>
     </form>
-    <hr/>
 </div>
 
 
-<div ng-repeat="room in adUpdateCtrl.rooms">
-    <form>
-        <label>Number:</label><input type="text" ng-model="room.roomNumber"/>
-        <button ng-click="adUpdateCtrl.updateRoom(room)">Update</button>
-        <button ng-click="adUpdateCtrl.deleteRoom(room)">Delete</button>
-    </form>
-    <hr/>
-</div>
+<style>
+    .bttns{
+       float: right;
+        margin: 1%;
+    }
+
+    select {
+        color: black;
+        margin-top: 1%;
+    }
+
+    form{
+        width: 60%;
+        margin-top: 2%;
+    }
+
+    h2{
+        text-align: center;
+        width: 100%;
+    }
+</style>

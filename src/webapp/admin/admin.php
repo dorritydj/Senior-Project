@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['username'])){
-    header("Location: http://orange.ist.rit.edu/teamOrange/webapp/admin/login.php");
+    header("Location: https://orange.ist.rit.edu/teamOrange/webapp/admin/login.php");
 }
 ?>
 

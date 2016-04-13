@@ -12,7 +12,7 @@ function LoginService(http){
     self.getSession = getSession;
 
     function getSession(u,p){
-        return http.request('http://orange.ist.rit.edu/teamOrange/php/User/getSession.php', {}).then(function(data){
+        return http.request('https://orange.ist.rit.edu/teamOrange/php/User/getSession.php', {}).then(function(data){
             return data;
         }, function(data){
 
