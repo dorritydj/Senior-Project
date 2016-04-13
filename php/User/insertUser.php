@@ -2,7 +2,6 @@
 ini_set("display_errors", true);
 require dirname(__FILE__).'/connection.php';
 session_start();
-date_default_timezone_set('US/Eastern');
 
 // Check connection
 if ($conn->connect_error)
@@ -56,11 +55,11 @@ if(validation() == "True")
 	$salt = $_POST["salt"];
 
 	$stmt = $conn->prepare("INSERT INTO Users (userName,password, authLevel, salt) VALUES (?,?,?,?)");
-	$stmt->bind_param("ssss", $userName, $password, $authLevel, $salt);
-	$stmt->execute();
+$stmt->bind_param("ssss", $userName, $password, $authLevel, $salt);
+$stmt->execute();
 
 	$userNameLog = $_SESSION["username"];
-	$action = "Inserted User " . $userName;
+	$action = "Insert User";
 	$date = date('l jS \of F Y h:i:s A');
 
 	$stmtLog = $conn->prepare("INSERT INTO Log (userId,timeStamp,action) VALUES (?,?,?)");

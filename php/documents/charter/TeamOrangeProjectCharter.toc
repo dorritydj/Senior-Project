@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Basic Information}{3}
+\contentsline {section}{\numberline {2}Purpose}{3}
+\contentsline {section}{\numberline {3}Goals and Objectives}{3}
+\contentsline {section}{\numberline {4}Success Criteria}{4}
+\contentsline {section}{\numberline {5}Context}{4}
+\contentsline {section}{\numberline {6}Dependencies}{4}
+\contentsline {section}{\numberline {7}Scope Specifications}{4}
+\contentsline {subsection}{\numberline {7.1}Web Application Requirements}{4}
+\contentsline {subsection}{\numberline {7.2}Physical Requirements}{5}
+\contentsline {subsection}{\numberline {7.3}Implementation}{5}
+\contentsline {section}{\numberline {8}Out of Scope Specifications}{5}
+\contentsline {section}{\numberline {9}Assumptions}{5}
+\contentsline {section}{\numberline {10}Constraints}{5}
+\contentsline {section}{\numberline {11}Risks}{5}
+\contentsline {section}{\numberline {12}Budget Estimations}{6}
+\contentsline {section}{\numberline {13}Stakeholders}{6}
+\contentsline {section}{\numberline {14}Communication Plan}{6}
+\contentsline {section}{\numberline {15}Qualifications}{6}
+\contentsline {subsection}{\numberline {15.1}Frano Cavelis}{6}
+\contentsline {paragraph}{Education}{6}
+\contentsline {paragraph}{Work Experience}{6}
+\contentsline {paragraph}{Software Skills}{7}
+\contentsline {subsection}{\numberline {15.2}Andrew Wood}{7}
+\contentsline {paragraph}{Education}{7}
+\contentsline {paragraph}{Work Experience}{7}
+\contentsline {paragraph}{Software Skills}{7}
+\contentsline {subsection}{\numberline {15.3}Tomomi Takeuchi}{7}
+\contentsline {paragraph}{Education}{7}
+\contentsline {paragraph}{Work Experience}{7}
+\contentsline {paragraph}{Software Skills}{8}
+\contentsline {subsection}{\numberline {15.4}Daniel Dorrity}{8}
+\contentsline {paragraph}{Education}{8}
+\contentsline {paragraph}{Work Experience}{8}
+\contentsline {paragraph}{Software Skills}{8}

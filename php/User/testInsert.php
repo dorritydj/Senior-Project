@@ -1,7 +1,6 @@
 <?php
 session_destroy();
 session_start();
-date_default_timezone_set('US/Eastern');
 
 if (!isset($_SESSION['username']))
 {
@@ -16,7 +15,7 @@ if (!isset($_SESSION['username']))
  function test() 
  {
 
-            var userName = "aUser";
+            var userName = "someUser";
             var password = "password";
             var authLevel = "guest";
             var salt = "salty";

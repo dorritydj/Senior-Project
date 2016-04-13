@@ -1,7 +1,6 @@
 <?php
 require dirname(__FILE__).'/connection.php';
 session_start();
-date_default_timezone_set('US/Eastern');
 
 // Check connection
 if ($conn->connect_error)
@@ -20,9 +19,9 @@ function validation()
 	{
 		die("Invaild session!");
 	}
-	elseif($_SESSION["authLevel"] != "super" || $_SESSION["authLevel"] != "admin")
+	if($_POST["idStaff"] == "" || null)
 	{
-		die("Invaild session!");
+		die("POST data invaild!");
 	}
 	elseif($_POST["department"] == "" || null)
 	{
@@ -41,6 +40,10 @@ function validation()
 		die("POST data invaild!");
 	}
 	elseif($_POST["staffTitle"] == "" || null)
+	{
+		die("POST data invaild!");
+	}
+	elseif($_POST["staffPhoneNumber"] == "" || null)
 	{
 		die("POST data invaild!");
 	}

@@ -20,6 +20,7 @@ foreach($json['faculty'] as $item)
     	$phone = $item['phone'];
     	$email = $item['email'];
     	$title = $item['title'];
+        $imageAsset = substr($item['imagePath'], 8);
     	$officePrint = substr($office, -4);
     	$query = "INSERT INTO Rooms (roomNumber, deptCode) VALUES ('$officePrint', 'ISTE')";
     	if ($conn->query($query) === TRUE) 
@@ -30,7 +31,7 @@ foreach($json['faculty'] as $item)
 		{
     		echo "Error: " . $query . "<br>" . $conn->error;
 		}
-		$query = "INSERT INTO Staff (department, staffName, staffOffice, staffEmail, staffTitle, staffPhoneNumber) VALUES ('ISTE', '$name', '$officePrint', '$email', '$title', '$phone')";
+		$query = "INSERT INTO Staff (department, staffName, staffOffice, staffEmail, staffTitle, staffPhoneNumber, imageAsset) VALUES ('ISTE', '$name', '$officePrint', '$email', '$title', '$phone', '$imageAsset')";
 		if ($conn->query($query) === TRUE) 
     	{
     		echo "New record created successfully";

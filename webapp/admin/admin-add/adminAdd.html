@@ -1,0 +1,115 @@
+<div>
+    <h2>Enter Information</h2>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Category: </label>
+            <div class="col-sm-10">
+                <select ng-model="adAddCtrl.category">
+                    <option>Professor</option>
+                    <option>Room</option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Room'" class="form-group">
+            <label class="col-sm-2 control-label">Name: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.room.roomName"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Name: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffName"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Department: </label>
+            <div class="col-sm-10">
+                <label>{{adAddCtrl.dept}}</label>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'"  class="form-group">
+            <label class="col-sm-2 control-label">Email: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffEmail"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Title: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffTitle"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Office Number: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffOffice"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Room'" class="form-group">
+            <label class="col-sm-2 control-label">Number: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.room.roomNumber"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <label class="col-sm-2 control-label">Phone: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="adAddCtrl.prof.staffPhoneNumber"/>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Professor'" class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default" ng-click="adAddCtrl.addProf(adAddCtrl.prof)">Add Professor</button>
+            </div>
+        </div>
+
+        <div ng-if="adAddCtrl.category == 'Room'" class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default" ng-click="adAddCtrl.addRoom(adAddCtrl.room)">Add Room</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/ng-template" id="addModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Confirm Entry</h3>
+    </div>
+    <div class="modal-body">
+        {{staff.staffName}}<br/>
+        {{staff.staffOffice}}<br/>
+        {{staff.staffEmail}}<br/>
+        {{staff.staffTitle}}<br/>
+        {{staff.staffPhoneNumber}}<br/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+<style>
+    h2{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    form{
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    select{
+        color: black;
+    }
+</style>

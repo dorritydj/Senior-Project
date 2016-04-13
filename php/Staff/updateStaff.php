@@ -1,7 +1,6 @@
 <?php
 require dirname(__FILE__).'/connection.php';
 session_start();
-date_default_timezone_set('US/Eastern');
 
 // Check connection
 if ($conn->connect_error)

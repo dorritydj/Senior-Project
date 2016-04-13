@@ -1,7 +1,6 @@
 <?php
 require dirname(__FILE__).'/connection.php';
 session_start();
-date_default_timezone_set('US/Eastern');
 
 // Check connection
 if ($conn->connect_error)
@@ -17,10 +16,6 @@ else
 function validation()
 {
 	if($_SESSION["username"] == "" || $_SESSION["username"] == null)
-	{
-		die("Invaild session!");
-	}
-	elseif($_SESSION["authLevel"] != "super")
 	{
 		die("Invaild session!");
 	}
