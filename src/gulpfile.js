@@ -55,6 +55,8 @@ gulp.task('clean', function(){
 
 
 gulp.task('move-dev', function(){
+    console.log("Moving files to dist/");
+
     libsjs.pipe(gulp.dest('../dist/libs/'));
     libscss.pipe(gulp.dest('../dist/libs/'));
     php.pipe(gulp.dest('../dist/php'));
@@ -65,6 +67,8 @@ gulp.task('move-dev', function(){
 });
 
 gulp.task('move-prod', function(){
+    console.log("Moving files to dist/");
+
     libsjs
         .pipe(concat('libs.js'))
         .pipe(gulp.dest('../dist/libs/'));
@@ -100,8 +104,9 @@ gulp.task('inject-dev', function(){
         'webapp/**/*.php'
     ]);
 
+    console.log("Adding files to dist/index.html");
+
     return gulp.src('index.html')
-        .pipe(debug())
         .pipe(inject(sources, {relative:true, ignorePath:'../dist/'}))
         .pipe(gulp.dest("../dist/"));
 });
@@ -118,8 +123,9 @@ gulp.task('inject-prod', function(){
     gulp.src('webapp/app.js')
         .pipe(gulp.dest('../dist/webapp/'));
 
+    console.log("Adding files to dist/index.html");
+
     return gulp.src('index.html')
-        .pipe(debug())
         .pipe(inject(sources, {relative:true, ignorePath:'../dist/'}))
         .pipe(gulp.dest("../dist/"));
 });
