@@ -14,6 +14,13 @@ function AdminAddController(profServ, roomServ, $uibModal){
     self.dept = "";
     self.category = "Professor";
 
+    /**
+     * Opens a modal to confirm the add selection.
+     * If the input looks good, calls the script to add to DB,
+     * if not, returns back to the input screen
+     *
+     * @param prof
+     */
     function addProf(prof){
         var modalInstance = $uibModal.open({
             animation: true,
@@ -32,6 +39,11 @@ function AdminAddController(profServ, roomServ, $uibModal){
         });
     }
 
+    /**
+     * Calls the script to add the room to the DB
+     *
+     * @param room
+     */
     function addRoom(room){
         roomServ.addRoom(room);
     }

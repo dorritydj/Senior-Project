@@ -30,6 +30,10 @@ var sources = gulp.src([
     'webapp/**/*.js'
 ]);
 
+var php = gulp.src([
+    'php/**/*.php'
+]);
+
 var html = gulp.src([
     'webapp/**/*.html',
     'webapp/**/*.php'
@@ -38,8 +42,6 @@ var html = gulp.src([
 var index = gulp.src([
     'index.html'
 ]);
-
-
 
 gulp.task('clean', function(){
     return del([
@@ -55,7 +57,7 @@ gulp.task('clean', function(){
 gulp.task('move-dev', function(){
     libsjs.pipe(gulp.dest('../dist/libs/'));
     libscss.pipe(gulp.dest('../dist/libs/'));
-
+    php.pipe(gulp.dest('../dist/php'));
     sources.pipe(gulp.dest('../dist/webapp/'));
     html.pipe(gulp.dest('../dist/webapp/'));
 
@@ -69,6 +71,8 @@ gulp.task('move-prod', function(){
 
     libscss
         .pipe(gulp.dest('../dist/libs/'));
+
+    php.pipe(gulp.dest('../dist/php'));
 
     sources
         .pipe(concat('app.js'))

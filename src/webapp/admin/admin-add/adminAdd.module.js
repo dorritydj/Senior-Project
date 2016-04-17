@@ -1,7 +1,7 @@
 /**
  * @ngdoc overview
- * @name ist-bubble
- * @description Module declaration for bubble buttons
+ * @name ist-admin-add
+ * @description Module declaration for admin add
  */
 
 angular.module('ist-admin-add', [

@@ -35,6 +35,11 @@ function RoomService(http){
         })
     }
 
+    /**
+     * Gets the list of rooms for a specific department
+     * @param dept
+     * @returns {*|angular.IPromise<TResult>}
+     */
     function getRoomForDept(dept){
         return http.request('https://orange.ist.rit.edu/teamOrange/php/Room/getRoomsByDepartment.php', {deptCode: dept}).then(function(data){
             if(data.success){

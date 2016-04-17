@@ -3,9 +3,9 @@ angular.module('ist-admin-add')
 
 /**
  * @ngdoc directive
- * @name ist-bubble:bubbleButton
+ * @name ist-admin-add
  *
- * @description Directive for bubble button
+ * @description Directive for admin add
  */
 function AdminAddDirective(){
     function link(scope, element, attrs, ctrl) {

@@ -32,55 +32,5 @@ function DepartmentService(http){
             //TODO: Fail data here
         })
     }
-
-    /**
-     * Returns a promise containing success or error if the department was added to the DB
-     *
-     * @returns {*}
-     */
-    function addDept(){
-        var params = {
-
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
-        }, function(data){
-            //TODO: Fail data here
-        })
-    }
-
-    /**
-     * Returns a promise containing success or error if the department was removed from the DB
-     *
-     * @returns {*}
-     */
-    function deleteDept(){
-        var params = {
-
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
-        }, function(data){
-            //TODO: Fail data here
-        })
-    }
-
-    /**
-     * Returns a promise containing success or error if the department was updated the DB
-     *
-     * @returns {*}
-     */
-    function updateDept(){
-        var params = {
-
-        };
-
-        return http.request('PHP_SCRIPT_GOES_HERE', params).then(function(data){
-            //TODO: Success data here
-        }, function(data){
-            //TODO: Fail data here
-        })
-    }
+    
 }

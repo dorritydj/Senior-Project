@@ -31,6 +31,12 @@ function ProfessorService(http){
         })
     }
 
+    /**
+     * Gets the list of professors for a specific department
+     *
+     * @param dept
+     * @returns {*|angular.IPromise<TResult>}
+     */
     function getProfForDept(dept){
         return http.request('https://orange.ist.rit.edu/teamOrange/php/Staff/getStaffByDepartment.php', {deptCode: dept}).then(function(data){
             if(data.success){
