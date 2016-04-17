@@ -1,5 +1,5 @@
 /**
- * Created by dorritydj on 2/14/16.
+ * Importing node_module dependencies needed to run tasks
  */
 var gulp = require('gulp');
 var inject = require('gulp-inject');
@@ -12,6 +12,10 @@ var merge = require('merge-stream');
 var debug = require('gulp-debug');
 var run = require('run-sequence');
 
+/**
+ * File globs for project files. Set to gulp.src
+ * for ease of vinyl object calling
+ */
 var libsjs = gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/angular/angular.min.js',
@@ -19,30 +23,28 @@ var libsjs = gulp.src([
     'node_modules/angular-route/angular-route.min.js',
     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
 ]);
-
 var libscss = gulp.src([
     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
     'node_modules/bootstrap/dist/css/bootstrap.min.css',
     'webapp/styles/app.css'
 ]);
-
 var sources = gulp.src([
     'webapp/**/*.js'
 ]);
-
 var php = gulp.src([
     'php/**/*.php'
 ]);
-
 var html = gulp.src([
     'webapp/**/*.html',
     'webapp/**/*.php'
 ]);
-
 var index = gulp.src([
     'index.html'
 ]);
 
+/**
+ * Gulp task to clean the dist/ folder and set up for a new upload
+ */
 gulp.task('clean', function(){
     return del([
         '../dist/'
@@ -53,7 +55,9 @@ gulp.task('clean', function(){
     });
 });
 
-
+/**
+ * Gulp task to move development files to be uploaded
+ */
 gulp.task('move-dev', function(){
     console.log("Moving files to dist/");
 
@@ -66,6 +70,9 @@ gulp.task('move-dev', function(){
     return merge(libsjs,libscss,sources,html,index);
 });
 
+/**
+ * Gulp task to move production files to be uploaded
+ */
 gulp.task('move-prod', function(){
     console.log("Moving files to dist/");
 
@@ -88,6 +95,9 @@ gulp.task('move-prod', function(){
     return merge(libsjs,libscss,sources,html,index);
 });
 
+/**
+ * Gulp task to add the development script and link tags to the index.html
+ */
 gulp.task('inject-dev', function(){
     var sources = gulp.src([
         '../dist/libs/jquery.min.js',
@@ -111,6 +121,9 @@ gulp.task('inject-dev', function(){
         .pipe(gulp.dest("../dist/"));
 });
 
+/**
+ * Gulp task to add the production script and link tags to the index.html
+*/
 gulp.task('inject-prod', function(){
     var sources = gulp.src([
         '../dist/libs/libs.js',
@@ -130,21 +143,33 @@ gulp.task('inject-prod', function(){
         .pipe(gulp.dest("../dist/"));
 });
 
+/**
+ * Gulp task to generate AngularJS java doc style comment viewer
+ */
 gulp.task('ngDocs', function(){
     return gulp.src(['webapp/**/*.js'])
         .pipe(docs.process())
         .pipe(gulp.dest('./docs'))
 });
 
+/**
+ * Gulp task to run jasmine tasks
+ */
 gulp.task('tests', function(){
     gulp.src('tests/*.spec.js')
         .pipe(jasmine());
 });
 
+/**
+ * Gulp task to run clean, move-dev and inject-dev
+ */
 gulp.task('build-dev', function(cb){
     run('clean', 'move-dev', 'inject-dev', cb);
 });
 
+/**
+ * Gulp task to run clean, move-prod and inject-prod
+ */
 gulp.task('build-prod', function(cb){
     run('clean', 'move-prod', 'inject-prod', cb);
 });
